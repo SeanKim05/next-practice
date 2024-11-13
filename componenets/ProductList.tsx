@@ -4,7 +4,7 @@ import StarRating from "./StarRating";
 import { Product } from "@/types/product";
 
 export default function ProductList({
-  className = "",
+  className,
   products = [],
 }: {
   className: string;

@@ -1,12 +1,10 @@
 import styles from "@/styles/Home.module.css";
-import Container from "@/componenets/Container";
 import ProductList from "@/componenets/ProductList";
 import SearchForm from "@/componenets/SearchForm";
 import axios from "@/libs/axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Product } from "@/types/product";
-import Header from "@/componenets/Header";
 
 export default function Home() {
   const { query } = useRouter();
@@ -26,11 +24,8 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      <Container>
-        <SearchForm initialVal={searchQuery} />
-        <ProductList className={styles.products} products={products} />
-      </Container>
+      <SearchForm initialVal={searchQuery} />
+      <ProductList className={styles.products} products={products} />
     </>
   );
 }

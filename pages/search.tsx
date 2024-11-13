@@ -1,15 +1,10 @@
 import ProductList from "@/componenets/ProductList";
 import SearchForm from "@/componenets/SearchForm";
 import axios from "@/libs/axios";
+import styles from "@/styles/Search.module.css";
+import { Product } from "@/types/product";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-
-type Product = {
-  id: string;
-  name: string;
-  imgUrl: string;
-  price: number;
-};
 
 export default function Search() {
   const router = useRouter();
@@ -30,9 +25,12 @@ export default function Search() {
   }, [q]);
 
   return (
-    <div>
+    <>
       <SearchForm initialVal={searchQuery} />
-      <ProductList products={products} />
-    </div>
+      <h2 className={styles.title}>
+        <span className={styles.keyword}>{q}</span> 검색 결과
+      </h2>
+      <ProductList className={styles.productList} products={products} />
+    </>
   );
 }
