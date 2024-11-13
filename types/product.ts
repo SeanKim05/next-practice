@@ -7,4 +7,8 @@ export type Product = {
   starRating: number;
   starRatingCount: number;
   likeCount: number;
+  englishName: string;
+  point: number;
+  brand: string;
+  productCode: string;
 };

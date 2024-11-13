@@ -14,7 +14,7 @@ export default function ProductList({
     <ul className={`${styles.productList} ${className}`}>
       {products?.map((product) => (
         <li key={product.id}>
-          <Link className={styles.product} href={`/products/${product.id}`}>
+          <Link className={styles.product} href={`/items/${product.id}`}>
             <img
               className={styles.image}
               src={product.imgUrl}

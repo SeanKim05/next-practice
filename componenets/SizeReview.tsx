@@ -1,11 +1,13 @@
-import { SizeReviewListProps } from "@/types/size";
+import { SizeReview } from "@/types/size";
 import styles from "./SizeReviewList.module.css";
 import formatDate from "@/libs/formDate";
 import sizeReviewLabels from "@/libs/sizeReviewLabels";
 
 export default function SizeReviewList({
   sizeReviews,
-}: SizeReviewListProps): JSX.Element {
+}: {
+  sizeReviews: SizeReview[];
+}) {
   return (
     <ul className={styles.sizeReviewList}>
       {sizeReviews.map((sizeReview) => (
